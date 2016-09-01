@@ -3,7 +3,7 @@
 This example application demonstrates logging in to PureCloud _without the PureCloud login UI_ via SAML. This is accomplished with the following components:
 
 * A local node.js server to serve web pages and accept the SAML assertion
-* An Okta app to authenticate the user and provide a SAML assertion
+* An Okta app to authenticate the user and provide a SAML assertion (this can be done with any supported SAML IdP, the example uses Okta)
 * Use of the /oauth/token endpoint to exchange a SAML assertion for a PureCloud auth token
 
 # Prerequisites
