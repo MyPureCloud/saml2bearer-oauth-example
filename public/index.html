@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SAML Assertion Test</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.js"></script>
+	<script src="https://sdk-cdn.mypurecloud.com/javascript/0.61.2/purecloud-api.min.js"></script>
+
+	<script type="text/javascript">
+		var access_token = getFragmentVariable('access_token');
+		window.location.hash = '';
+
+		$(document).ready(function() {
+			if (access_token) {
+				// Create SDK instance with the PureCloud access token
+				var pureCloudSession = purecloud.platform.PureCloudSession({token: access_token});
+
+				// Create Users API
+				var api = new purecloud.platform.UsersApi(pureCloudSession);
+				
+				// Call GET /api/v2/users/me
+				api.getMe()
+					.then(function(result){
+						$('body').append('<img src="/cat.jpg" /></br />');
+						$('body').append('Welcome, ' + result.name + '<br />');
+						$('body').append('Here\'s your access token: ' + access_token);
+					})
+					.catch(function(error){
+						console.log(error);
+					});
+			} else {
+				// Use your Okta URL here
+				var oktaUrl = 'https://inin.oktapreview.com/home/inindev351417_purecloud_2/0oa82726leSLOxkmG0h7/aln827p64sJb24Utt0h7';
+				$('body').append('<a href="' + oktaUrl + '">Log in with Okta</a>');
+			}
+			
+		});
+
+		function getFragmentVariable(variable) {
+		    var query = window.location.hash.substring(1);
+		    var vars = query.split('&');
+		    for (var i = 0; i < vars.length; i++) {
+		        var pair = vars[i].split('=');
+		        if (decodeURIComponent(pair[0]) == variable) {
+		            return decodeURIComponent(pair[1]);
+		        }
+		    }
+		    console.log('Fragment variable %s not found', variable);
+		    return '';
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

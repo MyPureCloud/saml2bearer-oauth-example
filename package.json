@@ -1,0 +1,12 @@
+{
+	"dependencies":{
+		"colors":"1.x",
+		"superagent-bluebird-promise":"3.x",
+		"superagent":"1.x",
+		"bluebird":"3.x",
+		"express":"4.x",
+		"body-parser":"1.x",
+		"mime":"1.x",
+		"purecloud_api_sdk_javascript":">=0.61"
+	}
+}
