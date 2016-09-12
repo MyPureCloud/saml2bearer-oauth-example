@@ -16,7 +16,9 @@ This example application demonstrates logging in to PureCloud _without the PureC
 
 ## Okta App
 
-You will need an Okta SAML app configured to send the assertion to your server. For more information on setting up an Okta app, see the wiki page [Okta App Configuration]().
+You will need an Okta SAML app configured to send the assertion to your server. Follow the standard instuctions for [configuring Okta as a SSO provider](https://help.mypurecloud.com/articles/add-okta-as-a-single-sign-on-provider/) with the following exceptions:
+
+* _Single sign on URL_ and _Audience URI_ should be the URL to your app where the SAML assertion POST will be received. In the case of this example application, `https://localhost:8443/saml` may be a good value.
 
 ## PureCloud
 
