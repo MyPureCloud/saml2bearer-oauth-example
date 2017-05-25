@@ -1,4 +1,4 @@
-# SAML2BEARER OAuth Example
+# SAML2 Bearer OAuth Example
 
 This example application demonstrates logging in to PureCloud _without the PureCloud login UI_ via SAML. This is accomplished with the following components:
 
@@ -22,7 +22,7 @@ You will need an Okta SAML app configured to send the assertion to your server. 
 
 ## PureCloud
 
-You will need an OAuth client of type `SAML2BEARER`. 
+You will need an OAuth client of type `SAML2 BEARER`. 
 
 ### Create OAuth client via UI
 
@@ -39,7 +39,7 @@ Authorization: bearer mytoken
 Content-Type: application/json
 
 {
-   "name": "Saml 2 Bearer Client",
+   "name": "SAML2 Bearer Client",
    "accessTokenValiditySeconds": 86400,
    "description": "A SAML client",
    "registeredRedirectUri": [
