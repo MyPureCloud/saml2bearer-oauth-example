@@ -22,7 +22,13 @@ You will need an Okta SAML app configured to send the assertion to your server. 
 
 ## PureCloud
 
-You will need an OAuth client of type `SAML2BEARER`. This is currently only possible through the API.
+You will need an OAuth client of type `SAML2BEARER`. 
+
+### Create OAuth client via UI
+
+The SAML2 Bearer OAuth client can be created through the UI here: https://apps.mypurecloud.com/directory/#/admin/integrations/oauth
+
+### Create OAuth client via API
 
 Make a request to [POST /api/v2/oauth/clients](https://developer.mypurecloud.com/api/rest/v2/oauth/index.html#postOauthClients) with the property `"authorizedGrantType":"SAML2BEARER"`. The rest of the properties should be set according to your configuration. Here is an example request body:
 
