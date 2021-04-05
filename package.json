@@ -2,7 +2,7 @@
 	"dependencies":{
 		"colors":"1.x",
 		"superagent-bluebird-promise":"3.x",
-		"superagent":"1.x",
+		"superagent":"5.x",
 		"bluebird":"3.x",
 		"express":"4.x",
 		"body-parser":"1.x",
